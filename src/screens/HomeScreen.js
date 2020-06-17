@@ -1,10 +1,6 @@
 import React from "react";
 import { Text, StyleSheet, View } from "react-native";
 import Button from '../components/common/Button';
-import api_key from './azure_api_key.json';
-
-
-const apiKey = api_key["api_key"]
 
 const HomeScreen = ({ navigation }) => {
   const componentsBut = "Go to components demo"
@@ -13,6 +9,7 @@ const HomeScreen = ({ navigation }) => {
   const countBut = "Go to Counter screen"
   const colBut = "Go to Colour screen"
   const sqBut = "Go to Square"
+  const textBut = "Go to Text"
   return (
     <View>
       <Text style={styles.text}>HomeScreen</Text>
@@ -20,7 +17,7 @@ const HomeScreen = ({ navigation }) => {
 
       <Button
         title={componentsBut}
-        onPress={() => { console.log(apiKey); navigation.navigate('Components') }} //navigates to the components screen
+        onPress={() => { navigation.navigate('Components') }} //navigates to the components screen
       />
 
       <Button
@@ -43,6 +40,10 @@ const HomeScreen = ({ navigation }) => {
       <Button
         title={sqBut}
         onPress={() => navigation.navigate('Square')} //navigates to the components screen
+      />
+      <Button
+        title={textBut}
+        onPress={() => navigation.navigate('Text')} //navigates to the components screen
       />
     </View>
 
